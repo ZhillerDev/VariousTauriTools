@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+:root {
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/*body {*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*  display: flex;*/
+/*  place-items: center;*/
+/*  min-width: 320px;*/
+/*  min-height: 100vh;*/
+/*}*/
+
+
+/* 隐藏所有滚动条但保留滚动功能 */
+* {
+    /* Firefox */
+    scrollbar-width: none;
+    /* IE/Edge */
+    -ms-overflow-style: none;
+}
+
+/* WebKit内核浏览器 */
+*::-webkit-scrollbar {
+    display: none; /* Chrome/Safari/Opera/Edge */
+    width: 0;
+    height: 0;
+    background: transparent;
+}
+
+/* 强制所有容器继承滚动条设置 */
+body,
+div,
+section,
+main,
+aside,
+article,
+header,
+footer {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch; /* 启用顺滑滚动 */
+}
+
+/* 移动端优化 */
+@media (pointer: coarse) {
+    * {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+}
