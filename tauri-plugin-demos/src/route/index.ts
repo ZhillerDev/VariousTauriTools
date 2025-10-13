@@ -9,6 +9,7 @@ import CmdView from "../views/CmdView.tsx";
 import SystemInfoView from "../views/SystemInfoView.tsx";
 import CrudView from "../views/CrudView.tsx";
 import RequestView from "../views/RequestView.tsx";
+import SplashPage from "./SplashPage.tsx";
 // 使用React Router的createBrowserRouter函数创建一个路由配置
 export const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ export const router = createBrowserRouter([
     errorElement: React.createElement(ErrorPage),
     // 嵌套子路由配置
     children: [
+      {
+        path: '/splash',
+        Component: SplashPage,
+      },
       {
         // 认证相关路由路径
         path: '/home',

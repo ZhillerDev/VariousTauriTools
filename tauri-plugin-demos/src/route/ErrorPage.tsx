@@ -34,7 +34,7 @@ const ErrorPage = () => {
           <div style={{maxWidth: '400px', width: '100%'}}>
             <Card bordered={false}>
               <div style={{textAlign: 'center'}}>
-                <Title level={3} style={{margin: '0 0 16px 0'}}>
+                <Title style={{margin: '0 0 16px 0'}}>
                   {status === '404' ? '404' : '系统错误'}
                 </Title>
                 <Text style={{fontSize: '16px', color: '#666'}}>

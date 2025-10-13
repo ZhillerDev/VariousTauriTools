@@ -2,7 +2,7 @@ import {Button} from 'tdesign-react';
 import {TElement} from "tdesign-react/es/common";
 
 // 定义卡片项接口
-interface CardItem {
+export interface CardItem {
   label: string;
   description: string;
   color: string;
@@ -33,7 +33,7 @@ const ActionCard = ({item}: { item: CardItem }) => {
             textAlign: 'left',
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.transform = 'translateY(-2px)';
+            e.currentTarget.style.transform = 'scale(0.98)';
             e.currentTarget.style.boxShadow = `0 4px 8px ${item.color}40`;
           }}
           onMouseLeave={(e) => {

@@ -12,9 +12,27 @@
   "app": {
     "windows": [
       {
-        "title": "tauri-learn-demos",
+        "title": "tauri-plugin-demos",
+        "label": "main",
         "width": 960,
-        "height": 560
+        "height": 560,
+        "visible": true,
+        "center": true,
+        "resizable": true
+      },
+      {
+        "title": "splash",
+        "label": "splash",
+        "url": "/splash",
+        "width": 500,
+        "height": 320,
+        "visible": false,
+        "center": true,
+        "resizable": true,
+        "alwaysOnTop": false,
+        "skipTaskbar": true,
+        "transparent": true,
+        "decorations": false
       }
     ],
     "security": {

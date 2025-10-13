@@ -1,4 +1,5 @@
 import {Progress} from 'tdesign-react';
+import * as React from "react";
 
 const SplashPage: React.FC = () => {
   return (
@@ -7,7 +8,7 @@ const SplashPage: React.FC = () => {
         {/* 左上角标题区域 */}
         <div className="text-left">
           <h1 className="text-3xl font-bold">TaruiPluginDemos</h1>
-          <p className="text-xs text-gray-400 mt-1">some demos for tauri plugin</p>
+          <p className="text-l text-gray-400 mt-3">some demos for tauri plugin</p>
         </div>
 
         {/* 右下角蓝色视觉引导条 */}

@@ -2,11 +2,21 @@ use tauri::menu::IsMenuItem;
 use tauri::{
     menu::{Menu, MenuItem},
     tray::{TrayIconBuilder, TrayIconEvent},
-    Wry,
+    App, Wry,
 };
 
+pub fn init_system_tray(app: &App) -> Result<(), Box<dyn std::error::Error>> {
+    system_tray_setup(app).map_err(|e| {
+        Box::new(std::io::Error::new(
+            std::io::ErrorKind::Other,
+            format!("系统托盘初始化失败: {}", e),
+        )) as Box<dyn std::error::Error>
+    })?;
+    Ok(())
+}
+
 /// 创建并配置系统托盘图标
-pub fn system_tray_setup(app: &tauri::App) -> tauri::Result<()> {
+fn system_tray_setup(app: &tauri::App) -> tauri::Result<()> {
     // 创建托盘菜单项
     let menu_items = create_tray_menu_items(app)?;
 
