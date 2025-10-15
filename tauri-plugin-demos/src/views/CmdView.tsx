@@ -4,10 +4,14 @@ import {ActionCard, CardItem} from "../components/CardComps.tsx";
 function CmdView() {
 
   const runCalc = async () => {
-    await invoke("open_calc");
+    await invoke("run_calc");
   };
   const runNotepad = async () => {
-    await invoke("open_notepad");
+    await invoke("run_notepad");
+  };
+  const runPath = async () => {
+    let str = await invoke("run_get_running_path");
+    console.log(str)
   };
 
   const cmdCards: CardItem[] = [
@@ -22,7 +26,12 @@ function CmdView() {
       description: '打开记事本',
       color: '#52c41a',
       action: runNotepad
-
+    },
+    {
+      label: '获取绝对路径',
+      description: '获取当前应用运行路径',
+      color: '#52a41a',
+      action: runPath
     }
   ]
 

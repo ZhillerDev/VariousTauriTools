@@ -2,7 +2,7 @@ use tauri::menu::IsMenuItem;
 use tauri::{
     menu::{Menu, MenuItem},
     tray::{TrayIconBuilder, TrayIconEvent},
-    App, Wry,
+    App, AppHandle, Manager, Wry,
 };
 
 pub fn init_system_tray(app: &App) -> Result<(), Box<dyn std::error::Error>> {
@@ -67,13 +67,41 @@ fn handle_menu_event(app: &tauri::AppHandle, event: tauri::menu::MenuEvent) {
 /// 处理托盘图标事件
 // 如果确实不需要使用 tray 参数，可将其移除
 fn handle_tray_event(_tray: &tauri::tray::TrayIcon, event: TrayIconEvent) {
+    let app = _tray.app_handle();
     match event {
-        TrayIconEvent::Click { .. } => {
-            println!("Tray icon clicked");
-            // 这里可以添加点击托盘图标后的逻辑
+        TrayIconEvent::Click { button, .. } => {
+            let clk = button == tauri::tray::MouseButton::Left;
+            if clk {
+                toggle_main_window(&app);
+            }
+            // 右键点击会自动显示菜单
         }
         _ => {
             println!("Unhandled tray event: {:?}", event);
         }
+    }
+}
+
+/// 显示或隐藏主窗口
+fn toggle_main_window(app: &AppHandle) {
+    // 获取主窗口
+    if let Some(window) = app.get_window("main") {
+        // 检查窗口当前可见性
+        if let Ok(is_visible) = window.is_visible() {
+            if is_visible {
+                // 如果可见则隐藏
+                let _ = window.hide();
+            } else {
+                // 如果隐藏则显示并激活
+                let _ = window.show();
+                let _ = window.set_focus();
+            }
+        } else {
+            // 如果无法获取可见性状态，默认显示窗口
+            let _ = window.show();
+            let _ = window.set_focus();
+        }
+    } else {
+        println!("Main window not found");
     }
 }
