@@ -11,6 +11,10 @@
     "dialog:default",
     "notification:default",
     "log:default",
+    "store:allow-get",
+    "store:allow-set",
+    "store:allow-save",
+    "store:allow-load",
     {
       "identifier": "shell:allow-execute",
       "allow": [
@@ -21,6 +25,13 @@
         {
           "name": "notepad",
           "cmd": "notepad"
+        },
+        {
+          "name": "wmic",
+          "cmd": "wmic",
+          "args": [
+            "process where \"name='tauri_plugin_demos.exe'\" get name, executablepath /value"
+          ]
         }
       ]
     },

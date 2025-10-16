@@ -10,6 +10,7 @@ import SystemInfoView from "../views/SystemInfoView.tsx";
 import CrudView from "../views/CrudView.tsx";
 import RequestView from "../views/RequestView.tsx";
 import SplashPage from "./SplashPage.tsx";
+import ToolsView from "../views/ToolsView.tsx";
 // 使用React Router的createBrowserRouter函数创建一个路由配置
 export const router = createBrowserRouter([
   {
@@ -60,6 +61,10 @@ export const router = createBrowserRouter([
       {
         path: '/request',
         Component: RequestView
+      },
+      {
+        path: '/tools',
+        Component: ToolsView,
       }
     ],
   },

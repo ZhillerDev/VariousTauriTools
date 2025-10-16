@@ -9,6 +9,7 @@ import {
   HomeIcon,
   LogoChromeIcon,
   System3Icon,
+  ToolsIcon,
   ViewListIcon
 } from "tdesign-icons-react";
 import {useLocation, useNavigate} from "react-router";
@@ -57,6 +58,12 @@ const MENU_ITEMS: MenuItemConfig[] = [
     label: 'Request',
     icon: <LogoChromeIcon fillColor='transparent' strokeColor='currentColor' strokeWidth={2}/>,
     path: '/request'
+  },
+  {
+    value: 'item8',
+    label: '小工具',
+    icon: <ToolsIcon fillColor='transparent' strokeColor='currentColor' strokeWidth={2}/>,
+    path: '/tools'
   }
 ];
 
