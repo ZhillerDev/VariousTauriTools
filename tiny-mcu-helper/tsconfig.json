@@ -1,0 +1,72 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": [
+      "ES2020",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "baseUrl": ".", // 必须设置为 "."（项目根目录）
+    "paths": {
+      // 对应 @ 别名（指向 src 根目录）
+      "@/*": [
+        "src/*"
+      ],
+      // 对应 @components 别名（指向 src/components）
+      "@components/*": [
+        "src/components/*"
+      ],
+      // 对应 @views 别名（指向 src/views）
+      "@views/*": [
+        "src/views/*"
+      ],
+      // 对应 @layouts 别名（指向 src/layouts）
+      "@layouts/*": [
+        "src/layouts/*"
+      ],
+      // 对应 @styles 别名（指向 src/styles）
+      "@styles/*": [
+        "src/styles/*"
+      ],
+      // 对应 @routes 别名（指向 src/routes）
+      "@routes/*": [
+        "src/routes/*"
+      ],
+      // 对应 @stores 别名（指向 src/stores）
+      "@stores/*": [
+        "src/stores/*"
+      ],
+      // 对应 @utils 别名（指向 src/utils）
+      "@utils/*": [
+        "src/utils/*"
+      ],
+      // 对应 @data 别名（指向 src/data）
+      "@data/*": [
+        "src/data/*"
+      ]
+    },
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    /* Linting */
+    "strict": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noFallthroughCasesInSwitch": false
+  },
+  "include": [
+    "src"
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
+}
