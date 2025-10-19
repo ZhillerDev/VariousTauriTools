@@ -18,7 +18,7 @@ export const HeaderBar = () => {
         <HeadMenu
             className='w-full h-20'
             value="item1"
-            logo={<div className="font-bold text-xl">Tauri Plugin Demos</div>}
+            logo={<div className="font-bold text-xl">TinyMcuHelper</div>}
             operations={
               <div className="t-menu__operations">
                 <Switch

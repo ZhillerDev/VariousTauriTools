@@ -129,7 +129,7 @@ export default function Base64Page() {
 
   return (
       <div className="h-full flex flex-col">
-        <Card title="Base64转换器" bordered={false} className="flex-1 flex flex-col">
+        <div className='pt-4'>
           <div className="flex-1 flex flex-col p-1">
             {/* 顶部操作区 */}
             <div className="mb-4 flex justify-between items-center">
@@ -223,7 +223,7 @@ export default function Base64Page() {
               <p>3. 可通过交换按钮快速切换内容，方便双向转换</p>
             </div>
           </div>
-        </Card>
+        </div>
       </div>
   );
 }

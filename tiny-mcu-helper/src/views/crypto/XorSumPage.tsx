@@ -111,7 +111,7 @@ export default function XorSumPage() {
 
   return (
       <div className="h-full flex flex-col">
-        <Card title="异或和计算器" bordered={false} className="flex-1 flex flex-col">
+        <div className='pt-4'>
           <div className="flex-1 flex flex-col">
             {/* 输入区域 */}
             <div className="mb-6 flex-1">
@@ -184,7 +184,7 @@ export default function XorSumPage() {
               )}
             </div>
           </div>
-        </Card>
+        </div>
       </div>
   );
 };

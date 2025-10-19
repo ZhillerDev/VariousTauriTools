@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react';
 
 import {Button, Menu, MenuValue} from 'tdesign-react';
-import {CpuIcon, LockOnIcon, SettingIcon, ViewListIcon} from "tdesign-icons-react";
+import {CpuIcon, LockOnIcon, RefreshIcon, SettingIcon, ViewListIcon} from "tdesign-icons-react";
 import {useLocation, useNavigate} from "react-router";
 import {TElement} from "tdesign-react/es/common";
 import {useSettingStore} from "@stores/settingStore.ts";
@@ -29,6 +29,12 @@ const MENU_ITEMS: MenuItemConfig[] = [
     label: '加密',
     icon: <LockOnIcon fillColor='transparent' strokeColor='currentColor' strokeWidth={2}/>,
     path: '/crypto'
+  },
+    {
+    value: 'item4',
+    label: '转换',
+    icon: <RefreshIcon fillColor='transparent' strokeColor='currentColor' strokeWidth={2}/>,
+    path: '/conversion'
   },
   {
     value: 'item3',

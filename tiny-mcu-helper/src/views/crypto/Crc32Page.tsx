@@ -81,7 +81,7 @@ export default function Crc32Page() {
       const result = calculateCrc32(inputContent, inputType === 'hex');
       setCrcResult(result);
       setIsCalculated(true);
-      message('CRC32计算成功');
+      //message('CRC32计算成功');
     } catch (error) {
       if (error instanceof Error) {
         message(error.message);
@@ -100,7 +100,7 @@ export default function Crc32Page() {
     navigator.clipboard.writeText(crcResult).then(() => {
       setCopyStatus('copied');
       setTimeout(() => setCopyStatus('idle'), 2000);
-      message('CRC32结果已复制到剪贴板');
+      //message('CRC32结果已复制到剪贴板');
     }).catch(err => {
       console.error('复制失败:', err);
       message('复制失败，请手动复制');
@@ -128,7 +128,7 @@ export default function Crc32Page() {
 
   return (
       <div className="h-full flex flex-col">
-        <Card title="CRC32校验工具" bordered={false} className="flex-1 flex flex-col">
+        <div className='pt-4'>
           <div className="flex-1 flex flex-col">
             {/* 输入类型选择 */}
             <RadioGroup
@@ -165,7 +165,7 @@ export default function Crc32Page() {
                       ? '输入文本后点击"计算CRC32"按钮...'
                       : '输入十六进制字符串（如：48656C6C6F）后点击"计算CRC32"按钮...'
                   }
-                  className="h-full min-h-[120px] font-mono text-sm"
+                  className="h-full font-mono text-sm"
               />
             </div>
 
@@ -216,7 +216,7 @@ export default function Crc32Page() {
               )}
             </div>
           </div>
-        </Card>
+        </div>
       </div>
   );
 }
