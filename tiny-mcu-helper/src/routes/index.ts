@@ -6,6 +6,7 @@ import PeripheralView from "../views/PeripheralView.tsx";
 import CryptoView from "../views/CryptoView.tsx";
 import SettingView from "../views/SettingView.tsx";
 import ConversionView from "@views/ConversionView.tsx";
+import ToolView from "@views/ToolView.tsx";
 
 // 使用React Router的createBrowserRouter函数创建一个路由配置
 export const router = createBrowserRouter([
@@ -36,12 +37,18 @@ export const router = createBrowserRouter([
         // 使用默认布局组件（DefaultLayout需要提前导入）
         Component: SettingView,
       },
-        {
-          // 默认路由配置
-          path: '/conversion',
-          // 使用默认布局组件（DefaultLayout需要提前导入）
-          Component: ConversionView,
-        },
+      {
+        // 默认路由配置
+        path: '/conversion',
+        // 使用默认布局组件（DefaultLayout需要提前导入）
+        Component: ConversionView,
+      },
+      {
+        // 默认路由配置
+        path: '/tool',
+        // 使用默认布局组件（DefaultLayout需要提前导入）
+        Component: ToolView,
+      },
     ],
   },
 ]);

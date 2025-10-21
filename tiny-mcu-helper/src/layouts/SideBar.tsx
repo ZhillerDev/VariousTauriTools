@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react';
 
 import {Button, Menu, MenuValue} from 'tdesign-react';
-import {CpuIcon, LockOnIcon, RefreshIcon, SettingIcon, ViewListIcon} from "tdesign-icons-react";
+import {ApplicationIcon, CpuIcon, LockOnIcon, RefreshIcon, SettingIcon, ViewListIcon} from "tdesign-icons-react";
 import {useLocation, useNavigate} from "react-router";
 import {TElement} from "tdesign-react/es/common";
 import {useSettingStore} from "@stores/settingStore.ts";
@@ -25,19 +25,26 @@ const MENU_ITEMS: MenuItemConfig[] = [
     path: '/peripheral'
   },
   {
-    value: 'item2',
-    label: '加密',
-    icon: <LockOnIcon fillColor='transparent' strokeColor='currentColor' strokeWidth={2}/>,
-    path: '/crypto'
-  },
-    {
-    value: 'item4',
+    value: 'item3',
     label: '转换',
     icon: <RefreshIcon fillColor='transparent' strokeColor='currentColor' strokeWidth={2}/>,
     path: '/conversion'
   },
   {
-    value: 'item3',
+    value: 'item4',
+    label: '工具',
+    icon: <ApplicationIcon fillColor='transparent' strokeColor='currentColor' strokeWidth={2}/>,
+    path: '/tool'
+  },
+  {
+    value: 'item2',
+    label: '加密',
+    icon: <LockOnIcon fillColor='transparent' strokeColor='currentColor' strokeWidth={2}/>,
+    path: '/crypto'
+  },
+
+  {
+    value: 'item5',
     label: '设置',
     icon: <SettingIcon fillColor='transparent' strokeColor='currentColor' strokeWidth={2}/>,
     path: '/setting'

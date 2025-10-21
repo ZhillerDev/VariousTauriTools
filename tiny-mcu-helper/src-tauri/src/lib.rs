@@ -1,3 +1,5 @@
+pub mod db;
+pub mod functions;
 pub mod launcher;
 pub mod plugins;
 pub mod utils;
@@ -14,16 +16,20 @@ use plugins::run_notepad;
 use plugins::store_delete;
 use plugins::store_get;
 use plugins::store_set;
+
+use db::create_todo_migrations;
 use tauri::App;
+use tauri_plugin_sql::{Migration, MigrationKind};
 use tauri_plugin_system_info::SysInfoState;
 
 use crate::utils::handle_lifecycle;
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
-    tauri::Builder::default()
+  tauri::Builder::default()
         // stores 先注册后使用
         .plugin(tauri_plugin_store::Builder::default().build())
+        .plugin(tauri_plugin_sql::Builder::default().add_migrations("sqlite:todo.db", create_todo_migrations()).build())
         .setup(setup_app)
         .plugin(tauri_plugin_opener::init())
         .plugin(tauri_plugin_dialog::init())
