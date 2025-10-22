@@ -4,6 +4,7 @@ import TabPanel from "tdesign-react/es/tabs/TabPanel";
 import ClockCalcPage from "@views/peripheral/ClockCalcPage.tsx";
 import PwmCalcPage from "@views/peripheral/PwmCalcPage.tsx";
 import TodoListPage from "@views/tool/TodoListPage.tsx";
+import DocGeneratorPage from "@views/tool/DocGeneratorPage.tsx";
 
 function ToolView() {
   return (
@@ -25,6 +26,11 @@ function ToolView() {
           <TabPanel value={1} label="Todo">
             <div className="h-[calc(100vh-80px)] w-full p-1 overflow-auto">
               <TodoListPage/>
+            </div>
+          </TabPanel>
+          <TabPanel value={2} label="文档生成器">
+            <div className="h-[calc(100vh-80px)] w-full p-1 overflow-auto">
+              <DocGeneratorPage/>
             </div>
           </TabPanel>
         </Tabs>

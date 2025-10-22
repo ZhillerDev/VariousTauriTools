@@ -32,5 +32,7 @@ tauri-plugin-system-info = "2.0.9"
 tauri-plugin-notification = "2.3.1"
 tauri-plugin-log = "2.7.0"
 
+markdown2pdf = "0.1.6"
+
 tauri-plugin-sql = { version = "2.3.0", features = ["sqlite"], default-features = false }
 

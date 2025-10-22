@@ -3,6 +3,7 @@ import {Tabs} from "tdesign-react";
 import TabPanel from "tdesign-react/es/tabs/TabPanel";
 import BaseConvertPage from "@views/conversion/BaseConvertPage.tsx";
 import StorageConvertPage from "@views/conversion/StorageConvertPage.tsx";
+import MarkdownPdfConvertPage from "@views/conversion/MarkdownPdfConvertPage.tsx";
 
 function ConversionView() {
   return (
@@ -30,6 +31,11 @@ function ConversionView() {
           <TabPanel value={2} label="存储单位">
             <div className="h-[calc(100vh-80px)] w-full p-1 overflow-auto">
               <StorageConvertPage/>
+            </div>
+          </TabPanel>
+          <TabPanel value={3} label="Markdown">
+            <div className="h-[calc(100vh-80px)] w-full p-1 overflow-auto">
+              <MarkdownPdfConvertPage/>
             </div>
           </TabPanel>
         </Tabs>

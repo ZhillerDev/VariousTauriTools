@@ -6,3 +6,6 @@ pub use plugin_cmd::*;
 
 pub mod plugin_store;
 pub use plugin_store::*;
+
+pub mod plugin_fs;
+pub use plugin_fs::*;
